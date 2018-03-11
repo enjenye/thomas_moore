@@ -1,6 +1,6 @@
 opc_bits = 5
 reg_bits = 12
-rom_bits = 5
+rom_bits = 6
 
 reg_size = 2**(reg_bits-1)
 mem_size = 2**(reg_bits  )

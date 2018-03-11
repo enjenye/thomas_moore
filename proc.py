@@ -37,6 +37,8 @@ def proc(LED, SW, CLK100MHZ, prog=()):                                        # 
     C = Signal(modbv(0, -conf.reg_size, +conf.reg_size))
     I = Signal(modbv(0, -conf.reg_size, +conf.reg_size))
 
+    ma   = Signal(modbv(0, -conf.reg_size, +conf.reg_size))
+    md   = Signal(modbv(0, -conf.reg_size, +conf.reg_size))
     wr   = Signal(bool(0))
     rd   = Signal(bool(0))
     ext  = Signal(bool(0))
@@ -65,8 +67,8 @@ def proc(LED, SW, CLK100MHZ, prog=()):                                        # 
     @always(CLK100MHZ.posedge)
     def mem_wr():
         if wr:
-            if A == -1: LED.next = B
-            else:       mem[int(A)].next = B
+            if ma == -1: LED.next = md
+            else:        mem[int(ma)].next = md
 
     @always_comb
     def mem_rd():
@@ -118,8 +120,13 @@ def proc(LED, SW, CLK100MHZ, prog=()):                                        # 
             elif oper ==  7: A.next =  A ^ B; B.next = C                 # XOR
             elif oper ==  8: A.next =  A & B; B.next = C                 # AND
             elif oper ==  9: A.next =  A + B; B.next = C                 # ADD
-            elif oper == 10: A.next =  dinp[:];           rd.next = 1    # RMEM
-            elif oper == 11: A.next =  C;     B.next = C; wr.next = 1    # WMEM
+            elif oper == 10: A.next =  dinp[:];           rd.next = 1    # READ
+            elif oper == 11:                                             # WRITE
+                ma.next = A 
+                md.next = B 
+                wr.next = 1    
+                A.next = C     
+                B.next = C 
             elif oper == 12: jmp[:] =  A;     A.next = I + 1             # CALL
             elif oper == 13: jmp[:] =  I + A; A.next = B; B.next = C     # JUMP
             elif oper == 14:                                             # SKIP
