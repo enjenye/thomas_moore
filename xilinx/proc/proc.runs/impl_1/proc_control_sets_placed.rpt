@@ -1,0 +1,74 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
+| Date         : Sun Mar 11 14:36:14 2018
+| Host         : DESKTOP-8BE9SK2 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file proc_control_sets_placed.rpt
+| Design       : proc
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    21 |
+| Unused register locations in slices containing registers |    19 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              17 |            9 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              68 |           31 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++----------------------+-------------------------------+------------------+------------------+----------------+
+|     Clock Signal     |         Enable Signal         | Set/Reset Signal | Slice Load Count | Bel Load Count |
++----------------------+-------------------------------+------------------+------------------+----------------+
+|  CLK100MHZ_IBUF_BUFG | B[11]_i_1_n_0                 |                  |                4 |             12 |
+|  CLK100MHZ_IBUF_BUFG | C                             |                  |                6 |             12 |
+|  CLK100MHZ_IBUF_BUFG | LED[11]_i_1_n_0               |                  |                5 |             12 |
+|  CLK100MHZ_IBUF_BUFG |                               |                  |                9 |             17 |
+|  CLK100MHZ_IBUF_BUFG | A[11]_i_1_n_0                 |                  |               16 |             32 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_0_255_0_0_i_1_n_0     |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_1024_1279_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_1280_1535_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_1536_1791_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_1792_2047_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_2048_2303_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_2304_2559_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_2560_2815_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_256_511_0_0_i_1_n_0   |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_2816_3071_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_3072_3327_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_3328_3583_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_3584_3839_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_3840_4095_0_0_i_1_n_0 |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_512_767_0_0_i_1_n_0   |                  |               12 |             48 |
+|  CLK100MHZ_IBUF_BUFG | mem_reg_768_1023_0_0_i_1_n_0  |                  |               12 |             48 |
++----------------------+-------------------------------+------------------+------------------+----------------+
+
+

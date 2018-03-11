@@ -1,0 +1,6 @@
+*.vcd
+*.pyc
+.DS_Store
+.pyc
+misc/
+bench.*
