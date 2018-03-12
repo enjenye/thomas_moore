@@ -35,9 +35,12 @@ with open(sys.argv[1]) as f:
 # parse lines
 lines = [line.strip().split() for line in src]
 
-labels  = {}
+labels = {}
+variab = {}
 progmem = [0]*conf.rom_size
 progptr = 0
+datamem = [0]*conf.mem_size
+dataptr = 0
 
 # start assembling
 for lnr, line in enumerate(lines):
@@ -50,9 +53,17 @@ for lnr, line in enumerate(lines):
     # remove comments
     if word == '#': continue
 
-    # get labels : must be first element on the line
+    # get labels : ends on ':'
     if word[-1] == ':':
-        labels[word[:-1]] = {'ptr':progptr, "lnr":lnr}
+        label = word[:-1]
+        labels[label] = {'ptr':progptr, "lnr":lnr}
+        continue
+
+    # get variables : ends on '@'
+    if word[-1] == '@':
+        var = word[:-1]
+        variab[var] = {'ptr':dataptr, "lnr":lnr}
+        dataptr += 1
         continue
 
     # must be instruction now
@@ -71,8 +82,15 @@ for lnr, line in enumerate(lines):
         # parse operands (and labels)
         if arg in labels:
             operand = labels[arg]['ptr']
+        elif arg in variab:
+            operand = variab[arg]['ptr']
         else:
             operand = int(arg, 0)
+
+        # check for 'ORG'
+        if inst == -1:  
+            progptr = operand
+            continue
 
         # check for relative arguments
         if mode == 'rela': 
@@ -92,6 +110,7 @@ for lnr, line in enumerate(lines):
 
 
 print "LABELS", labels
+print "VARIABLES", variab
 print "PROG"
 print [hex(i) for i in progmem]
 

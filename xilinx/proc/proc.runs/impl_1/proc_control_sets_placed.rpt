@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sun Mar 11 16:59:58 2018
+| Date         : Sun Mar 11 21:47:33 2018
 | Host         : DESKTOP-8BE9SK2 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file proc_control_sets_placed.rpt
 | Design       : proc
@@ -33,10 +33,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              17 |            6 |
+| No           | No                    | No                     |              17 |            7 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              72 |           41 |
+| Yes          | No                    | No                     |              72 |           48 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -49,11 +49,11 @@ Table of Contents
 |     Clock Signal     |  Enable Signal  | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +----------------------+-----------------+------------------+------------------+----------------+
 |  CLK100MHZ_IBUF_BUFG | A[0]_i_1_n_0    |                  |               12 |             12 |
-|  CLK100MHZ_IBUF_BUFG | B[11]_i_1_n_0   |                  |                9 |             12 |
-|  CLK100MHZ_IBUF_BUFG | C[11]_i_1_n_0   |                  |                6 |             12 |
-|  CLK100MHZ_IBUF_BUFG | LED[11]_i_1_n_0 |                  |                5 |             12 |
-|  CLK100MHZ_IBUF_BUFG |                 |                  |                6 |             17 |
-|  CLK100MHZ_IBUF_BUFG | ma[11]_i_1_n_0  |                  |                9 |             24 |
+|  CLK100MHZ_IBUF_BUFG | B[11]_i_1_n_0   |                  |               10 |             12 |
+|  CLK100MHZ_IBUF_BUFG | C[11]_i_1_n_0   |                  |               12 |             12 |
+|  CLK100MHZ_IBUF_BUFG | LED[11]_i_1_n_0 |                  |                4 |             12 |
+|  CLK100MHZ_IBUF_BUFG |                 |                  |                7 |             17 |
+|  CLK100MHZ_IBUF_BUFG | ma[11]_i_1_n_0  |                  |               10 |             24 |
 +----------------------+-----------------+------------------+------------------+----------------+
 
 

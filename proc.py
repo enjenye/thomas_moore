@@ -198,7 +198,7 @@ def test_bench(prog=None):                                              # {{{
 
     tb = traceSignals(bench, prog)
     sim = Simulation(tb)
-    sim.run(500)
+    sim.run(5000)
 # }}}
 def make_vhdl(prog=None):                                               # {{{
     # clock and reset

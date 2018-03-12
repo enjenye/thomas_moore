@@ -1,6 +1,6 @@
 opc_bits = 5
 reg_bits = 12
-rom_bits = 6
+rom_bits = 9
 
 reg_size = 2**(reg_bits-1)
 mem_size = 2**(reg_bits  )
@@ -24,5 +24,7 @@ mnem = {    # ID    arg
     'SKIP'  : (14, 'data'),
     'HALT'  : (15, 'none'),
 
-    'LOAD'  : ( 5, 'data')
+    'LOAD'  : ( 5, 'data'),
+
+    'ORG'   : (-1, 'data')
 }
